@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "Classroom.h"
 #include "Shedule.h"
 #include "Equipment.h"
 #include "Classassistant.h"
@@ -28,6 +27,7 @@ int main(int argc, char** argv) {
 						//Schedule Bus
 						int menu2;
 						do {
+							menu2=0;
 							cout<<"Press 1 to Set Class Room Features"<<endl;
 							cout<<"Press 2 to Set Shedule Class"<<endl;
 							cout<<"Press 3 to Class Equipment"<<endl;
@@ -76,19 +76,19 @@ int main(int argc, char** argv) {
 
 							} else if(menu2==4) {
 								int room_id;
-								cout<<"Enter Class Room NUmber"<<endl;
+								cout<<"Enter Class Room Number"<<endl;
 								cin>>room_id;
 								Classroom c=searchclass(room_id);
-								classassistant A=creatnewclassassistant(c);
-								cout<<"Class Assistant Name is :"<<	A.getassistant_name()<<" .\n";
-								cout<<"Class Assistant ID is :"<<A.getassistant_id()<<" .\n";
-								//showLoadingDots(3);
-								//cout<<endl;
-								//waitAnyKey();
+								classassistant cl=creatnewclassassistant(c);
+								cout<<"Class Assistant Name is :"<<cl.assistant_name<<" .\n";
+								cout<<"Class Assistant ID is :"<<cl.assistant_id<<" .\n";
+								showLoadingDots(3);
+								cout<<endl;
+								waitAnyKey();
 							}
 
 							system("CLS");
-							//showValidOptionError(menu2, 0,2);
+							showValidOptionError(menu2, 0,4);
 						} while(menu2!=0);
 					}
 					system("CLS");
@@ -109,9 +109,9 @@ int main(int argc, char** argv) {
 				cout<<"Enter Class ID : "<<endl;
 				cin>>A;
 				classassistant ca= searchid(A);
-				cout<<ca.getassistant_id();
-				cout<<ca.getassistant_name();
-				cout<<ca.getClassroom().getroom_number();
+				cout<<ca.assistant_id;
+				cout<<ca.assistant_name;
+				cout<<ca.classroom.room_number;
 			}
 
 			//Rider/user

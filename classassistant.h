@@ -52,7 +52,7 @@ classassistant creatnewclassassistant(Classroom classroom) {
 	return A;
 }
 classassistant searchid(string id) {
-	classassistant *A;
+	classassistant *A=new classassistant();
 	//reading from file
 	fstream file;
 	file.open("ASSISTANT_DATA.dat");

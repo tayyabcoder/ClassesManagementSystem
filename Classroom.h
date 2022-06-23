@@ -70,7 +70,7 @@ Classroom creatnewclassroom()
 }
 
 Classroom searchclass(int id){
-	Classroom *c;
+	Classroom *c=new Classroom();
 	//reading from file
 	fstream file;
 	file.open("CLASSROOM_DATA.dat");

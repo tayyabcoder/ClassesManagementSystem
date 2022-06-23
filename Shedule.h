@@ -1,4 +1,5 @@
 #include <fstream>
+#include "Classroom.h"
 class Shedule{
 	public:
 		Classroom classroom;
@@ -78,7 +79,7 @@ Shedule creatnewshedule(Classroom classroom)
 }
 void showAllShedule(){
 	cout<<"Class Number \t\tDate\tTime\ttDay\t\tMonth"<<endl;
-	Shedule *pSh;
+	Shedule *pSh=new Shedule();
 	//reading from file
 	fstream file;
 	file.open("SCHEDULE_DATA.dat");

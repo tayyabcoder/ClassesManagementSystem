@@ -28,20 +28,19 @@ class classassistant {
 		}
 
 };
-classassistant creatnewclassassistant(Classroom classroom) {
+classassistant creatnewclassassistant() {
 	string assistant_name,assistant_id,duty_class;
 	int room_id;
-	cout<<"Enter Class Assistant Name"<<endl;
+	cout<<"Enter Class Assistant Name";
 	cin>>assistant_name;
-	cout<<"Enter Class Assistant ID "<<endl;
+	cout<<"Enter Class Assistant ID ";
 	cin>>assistant_id;
-	cout<<"Enter Class ID for Duty"<<endl;
+	cout<<"Enter Class ID for Duty";
 	cin>>room_id;
 	Classroom c=searchclass(room_id);
 	classassistant A;
 	A.setclassroom(c);
-	A.setassistant_name( assistant_name);
-	A.setassistant_id(assistant_id);
+	A.setassistant_name(assistant_name);
 	A.setassistant_id(assistant_id);
 	classassistant *pAs=&A;
 	//writing into file

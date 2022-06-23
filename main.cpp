@@ -75,11 +75,7 @@ int main(int argc, char** argv) {
 								waitAnyKey();
 
 							} else if(menu2==4) {
-								int room_id;
-								cout<<"Enter Class Room Number"<<endl;
-								cin>>room_id;
-								Classroom c=searchclass(room_id);
-								classassistant cl=creatnewclassassistant(c);
+								classassistant cl=creatnewclassassistant();
 								cout<<"Class Assistant Name is :"<<cl.assistant_name<<" .\n";
 								cout<<"Class Assistant ID is :"<<cl.assistant_id<<" .\n";
 								showLoadingDots(3);
@@ -106,7 +102,7 @@ int main(int argc, char** argv) {
 
 
 				string A;
-				cout<<"Enter Class ID : "<<endl;
+				cout<<"Enter Assistant ID : "<<endl;
 				cin>>A;
 				classassistant ca= searchid(A);
 				cout<<ca.assistant_id;
@@ -114,64 +110,7 @@ int main(int argc, char** argv) {
 				cout<<ca.classroom.room_number;
 			}
 
-			//Rider/user
-			/*int menu;
-			do {
-				cout<<"Press 1 to Book a Bus"<<endl;
-				cout<<"Press 0 to go back"<<endl;
-				cin>>menu;
-				system("CLS");
-				if(menu==1) {
-					//Book a ride
-					int optionNumber;
-					Rider rider=CreateNewRider();
-					cout<<"Please wait we are searching the options for you";
-					showLoadingDots(5);
-					cout<<endl;
-					cout<<"Available Buses:"<<endl<<endl;
-					showAllBuses();
-					cout<<"Please enter the desired option number: ";
-					cin>>optionNumber;
-					cout<<"Loading available seats";
-					showLoadingDots(3);
-					cout<<endl;
-					Schedule schedule=getSchedule(optionNumber);
-					cout<<"Available Seats: "<<endl;
-					schedule.getBus().getAvailableSeats();
-					cout<<endl;
-					int availableSeatsCount=schedule.getBus().getAvailableSeatsCount();
-					int selectedSeats[availableSeatsCount];
-					int index=0;
-					for(int i=0; i<availableSeatsCount; i++) {
-						selectedSeats[i]=0;
-					}
-					for(int i=0; i<availableSeatsCount; i++) {
-						int n;
-						cout<<"Please enter seat number: ";
-						cin>>n;
-						selectedSeats[index]=n;
-						index++;
-						char yesNo='y';
-						cout<<"Do you want to select more?(y/n): ";
-						cin>>yesNo;
-						if(yesNo!='y')
-							break;
-					}
-					Booking booking=bookSeats(schedule,rider, selectedSeats, index);
-					cout<<"Please wait while we are generating your E-Ticket";
-					showLoadingDots(5);
-					system("CLS");
-					cout<<"Rider Name: "<<booking.getRider().getFristName()<<" "<<booking.getRider().getLastName()<<endl;
-					cout<<"Seats: ";
-					booking.getSeatNumbers();
-					cout<<endl;
-					cout<<"Fare: "<<booking.getTotalFare()<<" Discount: "<<booking.getTotalDiscount()<<" G.Total: "<<booking.getGrandTotal()<<endl;
-					cout<<"*************************************************************************";
-					waitAnyKey();
-				}
-				system("CLS");
-				showValidOptionError(menu,0,1);
-			} while(menu!=0);*/
+		
 		}
 		showValidOptionError((role!=1 && role !=2 && role !=3));
 	} while(role!=3);
